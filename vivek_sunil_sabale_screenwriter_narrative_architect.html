@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vivek Sunil Sabale | Screenwriter & Narrative Architect</title>
+  
+  <!-- Cinematic & Industry Standard Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0a0b0e',
+            void: '#060709',
+            charcoal: '#12141c',
+            surface: '#181b26',
+            surfaceLight: '#232736',
+            gold: {
+              100: '#fef7dc',
+              200: '#fbeab2',
+              300: '#f7dc85',
+              400: '#eec44f',
+              500: '#d4af37',
+              600: '#b89225',
+              700: '#8c6c18'
+            },
+            crimson: {
+              500: '#e53e3e',
+              600: '#c53030',
+              700: '#9b2c2c'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Cinzel', 'Playfair Display', 'serif'],
+            editorial: ['Playfair Display', 'serif'],
+            script: ['Courier Prime', 'Courier', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Ambient film grain overlay */
+    .film-grain {
+      background-image: radial-gradient(rgba(212, 175, 55, 0.04) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    /* Glow utilities */
+    .glow-gold {
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.18);
+    }
+    .glow-gold-hover:hover {
+      box-shadow: 0 10px 35px -5px rgba(212, 175, 55, 0.28);
+    }
+
+    /* Industry standard screenplay formatting */
+    .screenplay-paper {
+      background-color: #f6f3eb !important;
+      color: #1a1a1a !important;
+      box-shadow: inset 0 0 60px rgba(0,0,0,0.06), 0 25px 50px -12px rgba(0,0,0,0.5);
+    }
+    .screenplay-paper .script-slug {
+      color: #92400e !important;
+    }
+    .screenplay-paper .script-char {
+      color: #0f172a !important;
+    }
+    .screenplay-paper .script-dialogue {
+      color: #1e293b !important;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 7px;
+      height: 7px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0a0b0e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232736;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #d4af37;
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-gray-200 font-sans antialiased selection:bg-gold-500 selection:text-black film-grain min-h-screen flex flex-col relative overflow-x-hidden">
+
+  <!-- ================= TOP NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 backdrop-blur-xl bg-obsidian/90 border-b border-gray-800/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#" class="group flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 p-0.5 shadow-lg group-hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-full bg-obsidian rounded-[10px] flex items-center justify-center">
+            <span class="font-serif font-black text-xl text-transparent bg-clip-text bg-gradient-to-tr from-gold-400 to-amber-200">VS</span>
+          </div>
+        </div>
+        <div>
+          <span class="font-serif text-lg font-bold tracking-wider text-white block group-hover:text-gold-400 transition-colors">
+            VIVEK SUNIL SABALE
+          </span>
+          <span class="text-[11px] uppercase tracking-widest text-gold-400/90 font-medium flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-ping"></span>
+            Screenwriter & Narrative Architect
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-8 text-xs uppercase tracking-widest font-medium text-gray-300">
+        <a href="#about" class="hover:text-gold-400 transition-colors">Vision</a>
+        <a href="#slate" class="hover:text-gold-400 transition-colors">Project Slate</a>
+        <a href="#reader" class="hover:text-gold-400 transition-colors">Script Vault</a>
+        <a href="#incubator" class="hover:text-gold-400 transition-colors">Future Pipeline</a>
+        <a href="#credentials" class="hover:text-gold-400 transition-colors">Craft & SWA</a>
+      </nav>
+
+      <!-- Action & Audio Controls -->
+      <div class="flex items-center gap-3">
+        <!-- Ambient Drone Synthesizer Button -->
+        <button id="ambientSoundBtn" title="Toggle cinematic focus soundtrack" class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-800 bg-surface/90 text-xs text-gray-400 hover:text-gold-400 hover:border-gold-500/40 transition-all">
+          <i id="audioIcon" class="fa-solid fa-volume-xmark text-xs"></i>
+          <span id="audioStatusText">Soundtrack [Off]</span>
+        </button>
+
+        <!-- Direct Contact Action -->
+        <a href="#contact" class="px-4 py-2 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-obsidian font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-gold-500/20">
+          Pitch Meeting
+        </a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button id="mobileMenuBtn" aria-label="Toggle navigation menu" class="lg:hidden text-gray-400 hover:text-white p-2">
+          <i class="fa-solid fa-bars-staggered text-xl"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-charcoal border-b border-gray-800 px-6 py-5 space-y-4">
+      <a href="#about" class="mobile-nav-link block text-gray-300 hover:text-gold-400 text-sm">Vision & Profile</a>
+      <a href="#slate" class="mobile-nav-link block text-gray-300 hover:text-gold-400 text-sm">Screenplay Slate</a>
+      <a href="#reader" class="mobile-nav-link block text-gray-300 hover:text-gold-400 text-sm">Script Reader</a>
+      <a href="#incubator" class="mobile-nav-link block text-gray-300 hover:text-gold-400 text-sm">Future Incubator</a>
+      <a href="#credentials" class="mobile-nav-link block text-gray-300 hover:text-gold-400 text-sm">Credentials & Specs</a>
+      <div class="pt-3 border-t border-gray-800 flex flex-col gap-2">
+        <a href="tel:+918459755916" class="text-xs text-gold-400 flex items-center gap-2">
+          <i class="fa-solid fa-phone"></i> +91 8459755916
+        </a>
+        <a href="mailto:viveksabale2005@gmail.com" class="text-xs text-gold-400 flex items-center gap-2">
+          <i class="fa-solid fa-envelope"></i> viveksabale2005@gmail.com
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= HERO SECTION ================= -->
+  <section id="about" class="relative pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden">
+    <!-- Cinematic backdrop lighting -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[380px] bg-gradient-to-tr from-gold-600/10 via-amber-500/5 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Status Pill -->
+      <div class="flex flex-wrap items-center gap-2 mb-8">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-surface border border-gold-500/30 text-gold-300 text-xs font-medium tracking-wide shadow-inner">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Open for Writers' Rooms, Feature Commissions & Optioning</span>
+        </div>
+        <div class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface/70 border border-gray-800 text-xs text-gray-400">
+          <i class="fa-solid fa-id-card-clip text-gold-400"></i>
+          <span>SWA Registered: <strong>#80415</strong></span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Hero Introduction -->
+        <div class="lg:col-span-8 space-y-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-serif font-extrabold text-white leading-tight tracking-tight">
+            Crafting High-Concept Universes & <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 via-gold-400 to-amber-500">Visceral Narratives.</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-300/90 font-light leading-relaxed max-w-3xl">
+            I am <span class="text-white font-medium">Vivek Sunil Sabale</span>, a screenwriter and narrative architect based in Maharashtra. I architect high-tension rural crime sagas, intricate psychological procedurals, and expansive mythological sci-fi franchises — built on deep character psychology, kinetic visual rhythm, and regional authenticity.
+          </p>
+
+          <!-- Direct Contact Quick Pills -->
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            <button onclick="copyToClipboard('viveksabale2005@gmail.com', 'Email copied to clipboard!')" class="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-surface hover:bg-surfaceLight border border-gray-800 text-xs text-gray-300 hover:text-white transition-all">
+              <i class="fa-solid fa-envelope text-gold-400"></i>
+              <span>viveksabale2005@gmail.com</span>
+              <i class="fa-regular fa-copy text-[11px] text-gray-500 group-hover:text-gold-400"></i>
+            </button>
+
+            <button onclick="copyToClipboard('+918459755916', 'Phone number copied!')" class="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-surface hover:bg-surfaceLight border border-gray-800 text-xs text-gray-300 hover:text-white transition-all">
+              <i class="fa-solid fa-phone text-gold-400"></i>
+              <span>+91 8459755916</span>
+              <i class="fa-regular fa-copy text-[11px] text-gray-500 group-hover:text-gold-400"></i>
+            </button>
+
+            <div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-charcoal/60 border border-gray-800/80 text-xs text-gray-400">
+              <i class="fa-solid fa-location-dot text-gold-400"></i>
+              <span>Sangli • Pune • Mumbai</span>
+            </div>
+          </div>
+
+          <!-- Key Metrics -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4">
+            <div class="p-4 rounded-xl bg-surface/80 border border-gray-800/80">
+              <div class="text-2xl font-serif font-bold text-gold-400">6+</div>
+              <div class="text-xs text-gray-400 mt-1">Packaged Scripts & Universes</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface/80 border border-gray-800/80">
+              <div class="text-2xl font-serif font-bold text-gold-400">Bilingual</div>
+              <div class="text-xs text-gray-400 mt-1">Marathi & Hindi/English</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface/80 border border-gray-800/80">
+              <div class="text-2xl font-serif font-bold text-gold-400">100%</div>
+              <div class="text-xs text-gray-400 mt-1">SWA Legal Protection</div>
+            </div>
+            <div class="p-4 rounded-xl bg-surface/80 border border-gray-800/80">
+              <div class="text-2xl font-serif font-bold text-gold-400">End-to-End</div>
+              <div class="text-xs text-gray-400 mt-1">Treatments, Bibles & Outlines</div>
+            </div>
+          </div>
+
+          <!-- Primary Hero Actions -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="#slate" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-obsidian font-bold text-sm tracking-wide shadow-lg hover:shadow-gold-500/25 transition-all duration-300 flex items-center gap-2">
+              <i class="fa-solid fa-film"></i> Review Project Slate
+            </a>
+            <a href="#reader" class="px-6 py-3.5 rounded-xl bg-surface hover:bg-surfaceLight border border-gray-700 text-white font-medium text-sm transition-all duration-300 flex items-center gap-2">
+              <i class="fa-solid fa-align-left text-gold-400"></i> Read Screenplay Excerpt
+            </a>
+            <a href="#contact" class="px-6 py-3.5 rounded-xl border border-gold-500/30 hover:border-gold-400 text-gold-300 font-medium text-sm transition-all duration-300 flex items-center gap-2">
+              <i class="fa-regular fa-paper-plane"></i> Direct Inquiry
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Visual Showcase / Spec Slate -->
+        <div class="lg:col-span-4 flex justify-center">
+          <div class="relative w-full max-w-sm rounded-2xl p-1 bg-gradient-to-b from-gold-500/30 via-gray-800 to-transparent">
+            <div class="rounded-2xl bg-charcoal p-6 border border-gray-800/90 space-y-5 relative overflow-hidden shadow-2xl">
+              
+              <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+                <div class="flex items-center gap-3">
+                  <div class="w-12 h-12 rounded-xl bg-surface border border-gold-500/30 flex items-center justify-center text-gold-400">
+                    <i class="fa-solid fa-pen-nib text-xl"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-serif font-bold text-white text-base">Narrative Dossier</h3>
+                    <p class="text-xs text-gray-400">Screenwriter & Creator</p>
+                  </div>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[10px] font-mono uppercase tracking-wider border border-emerald-500/20">Verified</span>
+              </div>
+
+              <!-- Quick Spec Checklist -->
+              <div class="space-y-3 text-xs">
+                <div class="flex justify-between py-1 border-b border-gray-800/60">
+                  <span class="text-gray-400">Core Genres</span>
+                  <span class="font-medium text-white text-right">Crime Saga, Sci-Fi, Thriller</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-800/60">
+                  <span class="text-gray-400">Geographic Soul</span>
+                  <span class="font-medium text-white text-right">Western Maharashtra & Mumbai</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-800/60">
+                  <span class="text-gray-400">Screenplay Tools</span>
+                  <span class="font-medium text-white text-right">Final Draft, Fade In, Highland</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-800/60">
+                  <span class="text-gray-400">SWA ID</span>
+                  <span class="font-mono text-gold-400">#80415</span>
+                </div>
+                <div class="flex justify-between py-1">
+                  <span class="text-gray-400">Availability</span>
+                  <span class="text-emerald-400 font-medium">Ready for Pitch Calls</span>
+                </div>
+              </div>
+
+              <!-- Author Statement -->
+              <div class="p-3.5 bg-surface/90 rounded-xl border border-gray-800 text-[11px] text-gray-300 italic leading-relaxed">
+                "Writing is engineering human conviction. Every scene must either alter the psychological dynamic or intensify the narrative stakes."
+              </div>
+
+              <!-- Action Links -->
+              <div class="grid grid-cols-2 gap-2 pt-1">
+                <a href="tel:+918459755916" class="py-2 text-center rounded-lg bg-surface hover:bg-surfaceLight border border-gray-700 text-[11px] text-gray-300 hover:text-white transition-colors flex items-center justify-center gap-1.5">
+                  <i class="fa-solid fa-phone text-gold-400 text-[10px]"></i> Call Direct
+                </a>
+                <a href="mailto:viveksabale2005@gmail.com" class="py-2 text-center rounded-lg bg-gold-500 hover:bg-gold-400 text-[11px] text-obsidian font-bold transition-colors flex items-center justify-center gap-1.5">
+                  <i class="fa-solid fa-paper-plane text-[10px]"></i> Quick Pitch
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECT SLATE & FRANCHISE BIBLES ================= -->
+  <section id="slate" class="py-20 bg-charcoal/70 border-t border-b border-gray-800/70 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header & Filter Tabs -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div>
+          <div class="text-gold-400 text-xs uppercase tracking-widest font-semibold flex items-center gap-2 mb-2">
+            <i class="fa-solid fa-clapperboard"></i> Production Slate
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Original Screenplays & Franchises</h2>
+          <p class="text-gray-400 text-sm mt-2 max-w-xl">
+            Packaged scripts, complete episodic series bibles, and expansive cinematic universes prepared for studio co-production and financing.
+          </p>
+        </div>
+
+        <!-- Filter Tags -->
+        <div class="flex flex-wrap items-center gap-2 bg-surface p-1.5 rounded-xl border border-gray-800 text-xs">
+          <button class="filter-tab active-tab px-3.5 py-1.5 rounded-lg bg-gold-500 text-obsidian font-bold transition-all" data-category="all">All Projects</button>
+          <button class="filter-tab px-3.5 py-1.5 rounded-lg text-gray-300 hover:text-white transition-all" data-category="feature">Feature Films</button>
+          <button class="filter-tab px-3.5 py-1.5 rounded-lg text-gray-300 hover:text-white transition-all" data-category="series">Web Series</button>
+          <button class="filter-tab px-3.5 py-1.5 rounded-lg text-gray-300 hover:text-white transition-all" data-category="universe">Cinematic Universe</button>
+          <button class="filter-tab px-3.5 py-1.5 rounded-lg text-gray-300 hover:text-white transition-all" data-category="scifi">Mythic Sci-Fi</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: संग्राम (Sangram: The Blood Legacy) -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="feature">
+          <div>
+            <!-- Banner Header -->
+            <div class="relative h-48 bg-gradient-to-br from-amber-950/40 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-gold-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-gold-500/20 text-gold-300 text-[10px] font-mono tracking-wider font-semibold border border-gold-500/30">FEATURE FILM</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">संग्राम: द ब्लड लेगसी</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">Rural Crime Drama • Action Noir</p>
+              </div>
+            </div>
+
+            <!-- Card Content -->
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                Set within the contested sugarcane-cooperative belt of Sangli, an estranged tactical heir must systematically dismantle his father's syndicate from within before a rival political coalition and state forces exterminate his bloodline.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>Sangli, Kolhapur & Krishna River Basin</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>Bilingual: Marathi (Dialect) & Hindi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>Complete Script (118 Pages) • 4th Draft</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Actions -->
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('sangram')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="loadSampleScene('sangram')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Read Sample Scene
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 2: The Pancha-Astra Chronicle -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="scifi">
+          <div>
+            <div class="relative h-48 bg-gradient-to-br from-indigo-950/40 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-300 text-[10px] font-mono tracking-wider font-semibold border border-cyan-500/30">MYTHIC SCI-FI FRANCHISE</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">The Pancha-Astra</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">High-Concept Cyber-Vedic Universe</p>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                In a terraformed subcontinent recovering from resource collapse, archeo-engineers unlock celestial weapon codes codified in forgotten Sanskrit verses, igniting a war across corporate states for supreme planetary energy containment.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>Neo-Pune Megacity & Western Ghats Crypts</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>Pan-India Commercial Scope (Hindi / English / Marathi)</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>Franchise Bible (68 Pages) + Feature Pilot Script</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('panchastra')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="loadSampleScene('panchastra')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Read Sample Scene
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 3: शब्दांच्या कैदेत (Shabdanchya Kaidet) -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="series">
+          <div>
+            <div class="relative h-48 bg-gradient-to-br from-red-950/30 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-red-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-purple-500/20 text-purple-300 text-[10px] font-mono tracking-wider font-semibold border border-purple-500/30">OTT WEB SERIES</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">शब्दांच्या कैदेत</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">Psychological Thriller • 5 Episodes</p>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                A reclusive crime novelist whose fictional murders begin occurring in exact verbatim detail in suburban Mumbai must decipher whether he is an unwitting conspirator or suffering from dissociative amnesia engineered by an invisible reader.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>South Mumbai, Thane High-Rises & Khandala</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>Marathi with Hindi Overtones</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>5-Episode Arc Breakdown + Episode 1 Pilot</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('shabdanchya')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="loadSampleScene('shabdanchya')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Read Sample Scene
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 4: Bhoot Yatra -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="universe">
+          <div>
+            <div class="relative h-48 bg-gradient-to-br from-emerald-950/30 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-[10px] font-mono tracking-wider font-semibold border border-emerald-500/30">CINEMATIC UNIVERSE</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">Bhoot Yatra</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">Supernatural Sci-Fi Comedy • Lore Universe</p>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                When an underground transit line unearths a dormant metaphysical nexus, two corrupt government municipal clerks are forced to manage an unruly transit terminal for confused ghosts, demons, and celestial inspectors.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>Subterranean Mumbai & Kokan Mythology Corridor</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>Hindi / Marathi Commercial Comedy</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>Universe Bible, Pilot Draft & 3 Spin-off Pitch Loglines</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('bhootyatra')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="showToast('Bhoot Yatra excerpt is currently in packaging review!')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Universe Spec
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 5: The Ledger -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="feature">
+          <div>
+            <div class="relative h-48 bg-gradient-to-br from-blue-950/40 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-blue-500/20 text-blue-300 text-[10px] font-mono tracking-wider font-semibold border border-blue-500/30">FEATURE FILM</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">The Ledger</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">Financial Thriller • Corporate Espionage</p>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                A mathematical prodigy working for a covert offshore compliance desk discovers a deliberate algorithmic leak draining sovereign pension reserves, sparking a lethal chase across Mumbai's financial nerve centers.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>Bandra-Kurla Complex & Nariman Point</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>English / Hindi Urban Dialogues</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>Completed Feature Draft (122 Pages)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('ledger')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="showToast('The Ledger pitch deck ready upon request.')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Financial Comps
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 6: Kinaara (किनारा) -->
+        <div class="project-item group rounded-2xl bg-surface/90 border border-gray-800 hover:border-gold-500/50 overflow-hidden flex flex-col justify-between transition-all duration-300 glow-gold-hover" data-category="feature">
+          <div>
+            <div class="relative h-48 bg-gradient-to-br from-teal-950/40 via-surface to-charcoal p-6 flex flex-col justify-between border-b border-gray-800 overflow-hidden">
+              <div class="absolute -right-6 -bottom-6 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl"></div>
+              <div class="flex justify-between items-start z-10">
+                <span class="px-2.5 py-1 rounded bg-teal-500/20 text-teal-300 text-[10px] font-mono tracking-wider font-semibold border border-teal-500/30">FEATURE DRAMA</span>
+                <span class="text-xs text-gray-400 flex items-center gap-1"><i class="fa-solid fa-shield text-gold-400 text-[10px]"></i> SWA #80415</span>
+              </div>
+              <div class="z-10">
+                <h3 class="text-2xl font-serif font-bold text-white group-hover:text-gold-300 transition-colors">Kinaara (किनारा)</h3>
+                <p class="text-xs text-gold-400 font-mono uppercase tracking-wider mt-0.5">Atmospheric Realism • Coastal Saga</p>
+              </div>
+            </div>
+
+            <div class="p-6 space-y-4">
+              <p class="text-sm text-gray-300 leading-relaxed line-clamp-3">
+                A generational saga tracing three siblings in a Konkan fishing village whose traditional fishing wharf is seized for an unauthorized deep-sea cargo port, fracturing familial bonds against economic inevitability.
+              </p>
+
+              <div class="space-y-2 text-xs text-gray-400">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-map-pin text-gold-500/80 w-4"></i>
+                  <span>Ratnagiri, Malvan Coastline & Mumbai</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-language text-gold-500/80 w-4"></i>
+                  <span>Malvani Marathi & Conversational Hindi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-file-signature text-gold-500/80 w-4"></i>
+                  <span>Festival Packaging Stage (98 Pages)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-6 pt-0 border-t border-gray-800/60 mt-4 flex items-center justify-between">
+            <button onclick="openPitchModal('kinaara')" class="text-gold-400 hover:text-gold-300 text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors">
+              Open Pitch Bible <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+            <button onclick="showToast('Kinaara lookbook and moodboard available.')" class="text-xs text-gray-400 hover:text-white transition-colors">
+              Lookbook
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= AUTHENTIC SCREENPLAY EXCERPT READER ================= -->
+  <section id="reader" class="py-20 bg-obsidian relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="text-gold-400 text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 mb-2">
+          <i class="fa-solid fa-scroll"></i> Industry Standard Execution
+        </div>
+        <h2 class="text-3xl font-serif font-bold text-white">The Script Vault & Live Reader</h2>
+        <p class="text-gray-400 text-sm mt-2">
+          Inspect actual screenplay mechanics: courier typography, dialogue cadence, sluglines, parentheticals, and kinetic pacing.
+        </p>
+      </div>
+
+      <!-- Reader Console Controls -->
+      <div class="bg-surface rounded-t-2xl border border-gray-800 p-4 flex flex-wrap items-center justify-between gap-4">
+        
+        <!-- Scene Selection Tabs -->
+        <div class="flex items-center gap-2 flex-wrap">
+          <span class="text-xs font-mono uppercase tracking-wider text-gray-400 mr-2">Scene:</span>
+          <button onclick="switchScript('sangram')" id="btn-sangram" class="script-tab px-3 py-1.5 rounded-lg bg-gold-500 text-obsidian font-bold text-xs font-mono transition-all">
+            संग्राम (Sc. 14 - Ambush)
+          </button>
+          <button onclick="switchScript('panchastra')" id="btn-panchastra" class="script-tab px-3 py-1.5 rounded-lg bg-charcoal text-gray-300 hover:text-white text-xs font-mono border border-gray-700 transition-all">
+            Pancha-Astra (Prologue)
+          </button>
+          <button onclick="switchScript('shabdanchya')" id="btn-shabdanchya" class="script-tab px-3 py-1.5 rounded-lg bg-charcoal text-gray-300 hover:text-white text-xs font-mono border border-gray-700 transition-all">
+            शब्दांच्या कैदेत (Ep. 1 Hook)
+          </button>
+        </div>
+
+        <!-- Mode Toggles -->
+        <div class="flex items-center gap-2">
+          <button id="togglePaperBtn" onclick="togglePaperMode()" class="px-3.5 py-1.5 rounded-lg border border-gray-700 text-xs text-gray-300 hover:text-white hover:border-gray-500 transition-all flex items-center gap-2">
+            <i class="fa-solid fa-newspaper text-gold-400"></i>
+            <span id="paperBtnLabel">Classic Paper Mode</span>
+          </button>
+          
+          <button onclick="copyCurrentScriptSnippet()" title="Copy excerpt to clipboard" class="px-3.5 py-1.5 rounded-lg border border-gray-700 text-xs text-gray-300 hover:text-white hover:border-gray-500 transition-all flex items-center gap-1.5">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy Scene</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Live Script Rendering Canvas -->
+      <div id="scriptCanvas" class="bg-[#0f1118] text-[#c9d1d9] border-x border-b border-gray-800 p-6 sm:p-12 font-script text-sm sm:text-base leading-relaxed overflow-x-auto shadow-2xl transition-all duration-300 min-h-[480px]">
+        <!-- Script dynamically inserted via JS -->
+      </div>
+
+      <!-- SWA Watermark & Format Legend -->
+      <div class="mt-4 flex flex-wrap items-center justify-between text-xs text-gray-500 px-2">
+        <span class="flex items-center gap-2">
+          <i class="fa-solid fa-shield-halved text-gold-400"></i>
+          <span>Protected under Screenwriters Association (SWA) India • Member #80415</span>
+        </span>
+        <span class="text-gray-400">Standard Courier 12pt specifications & 1.5 inch margins</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FUTURE WORK & INCUBATOR PIPELINE ================= -->
+  <section id="incubator" class="py-20 bg-charcoal/80 border-t border-b border-gray-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <div class="text-gold-400 text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 mb-2">
+          <i class="fa-solid fa-compass-drafting"></i> Future Slate & R&D
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-serif font-bold text-white">Narrative Development Incubator</h2>
+        <p class="text-gray-400 text-sm mt-2">
+          Tracking upcoming intellectual properties in ideation, treatments, writer-room packaging, and director attachment stages.
+        </p>
+      </div>
+
+      <!-- Roadmap Pipeline Stages -->
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <!-- Stage 1 -->
+        <div class="p-6 rounded-2xl bg-surface border border-gray-800 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-gold-400 font-bold px-2 py-1 rounded bg-gold-500/10 border border-gold-500/20">Stage 01</span>
+            <span class="text-xs text-gray-500 font-mono">Q1 2026</span>
+          </div>
+          <h3 class="text-base font-serif font-bold text-white">Ideation & Lore Bible</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            <strong>Project Garuda-Nine:</strong> Speculative space-heist revolving around an ISRO retrieval satellite carrying deep space minerals.
+          </p>
+          <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gold-500 h-full w-2/5"></div>
+          </div>
+          <span class="text-[11px] text-gray-400 block">Worldbuilding Bible in progress</span>
+        </div>
+
+        <!-- Stage 2 -->
+        <div class="p-6 rounded-2xl bg-surface border border-gray-800 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-gold-400 font-bold px-2 py-1 rounded bg-gold-500/10 border border-gold-500/20">Stage 02</span>
+            <span class="text-xs text-gray-500 font-mono">Q2 2026</span>
+          </div>
+          <h3 class="text-base font-serif font-bold text-white">First Draft Development</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            <strong>The Pune Phantom:</strong> True-crime inspired investigative procedural dissecting the 1970s Joshi-Abhyankar case through modern forensics.
+          </p>
+          <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-gold-500 h-full w-3/5"></div>
+          </div>
+          <span class="text-[11px] text-gray-400 block">Beat sheet locked; Scene writing</span>
+        </div>
+
+        <!-- Stage 3 -->
+        <div class="p-6 rounded-2xl bg-surface border border-gray-800 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-gold-400 font-bold px-2 py-1 rounded bg-gold-500/10 border border-gold-500/20">Stage 03</span>
+            <span class="text-xs text-gray-500 font-mono">Pitch Ready</span>
+          </div>
+          <h3 class="text-base font-serif font-bold text-white">संग्राम (Sangram)</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            Draft 4 polished. Complete pitch bible, lookbook, and character breakdowns packaged for production houses.
+          </p>
+          <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-400 h-full w-full"></div>
+          </div>
+          <span class="text-[11px] text-emerald-400 font-semibold block">Ready for Studio Presentation</span>
+        </div>
+
+        <!-- Stage 4 -->
+        <div class="p-6 rounded-2xl bg-surface border border-gray-800 space-y-4 relative">
+          <div class="flex items-center justify-between">
+            <span class="text-[10px] font-mono uppercase tracking-wider text-gold-400 font-bold px-2 py-1 rounded bg-gold-500/10 border border-gold-500/20">Stage 04</span>
+            <span class="text-xs text-gray-500 font-mono">Packaging</span>
+          </div>
+          <h3 class="text-base font-serif font-bold text-white">शब्दांच्या कैदेत</h3>
+          <p class="text-xs text-gray-300 leading-relaxed">
+            OTT episodic series packaged for leading streaming platforms with detailed episodic season arcs and casting suggestions.
+          </p>
+          <div class="w-full bg-gray-800 h-1.5 rounded-full overflow-hidden">
+            <div class="bg-emerald-400 h-full w-5/6"></div>
+          </div>
+          <span class="text-[11px] text-emerald-400 font-semibold block">Targeting OTT Slate</span>
+        </div>
+
+      </div>
+
+      <!-- Co-Writing & Room Collab Banner -->
+      <div class="mt-12 p-8 rounded-2xl bg-gradient-to-r from-surface via-charcoal to-surface border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <h3 class="text-xl font-serif font-bold text-white">Seeking a Dedicated Staff Writer or Script Doctor?</h3>
+          <p class="text-xs text-gray-300 max-w-2xl">
+            Available to join active writers' rooms, structure non-linear features, write authentic vernacular Marathi/Hindi dialogue, or punch up action geography for stunt teams.
+          </p>
+        </div>
+        <a href="#contact" class="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian font-bold text-xs uppercase tracking-wider transition-all whitespace-nowrap shadow-md">
+          Initiate Writers' Room Call
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CRAFT CREDENTIALS & SWA SPECIFICATIONS ================= -->
+  <section id="credentials" class="py-20 bg-obsidian">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 space-y-6">
+          <div class="text-gold-400 text-xs uppercase tracking-widest font-semibold flex items-center gap-2">
+            <i class="fa-solid fa-stamp"></i> Legal & Technical Assurance
+          </div>
+          <h2 class="text-3xl font-serif font-bold text-white">Industry Standards & Professional Rigor</h2>
+          <p class="text-sm text-gray-300 leading-relaxed">
+            Collaborating with production houses requires airtight IP protection, professional format compliance, and meticulous structural documentation.
+          </p>
+
+          <div class="space-y-4">
+            <div class="p-4 rounded-xl bg-surface border border-gray-800 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-registered"></i>
+              </div>
+              <div>
+                <h4 class="text-white text-sm font-semibold">Screenwriters Association (SWA) India</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Membership Number: <strong>80415</strong>. All concepts, treatments, bibles, and drafts are systematically copyrighted before distribution.</p>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-xl bg-surface border border-gray-800 flex items-start gap-4">
+              <div class="w-10 h-10 rounded-lg bg-gold-500/10 text-gold-400 flex items-center justify-center shrink-0 text-base">
+                <i class="fa-solid fa-layer-group"></i>
+              </div>
+              <div>
+                <h4 class="text-white text-sm font-semibold">Production Ready Deliverables</h4>
+                <p class="text-xs text-gray-400 mt-0.5">Includes scene-by-scene beat sheets, character motive maps, location breakdowns, and stunt coordination action notes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="p-6 rounded-2xl bg-charcoal border border-gray-800 space-y-2">
+            <span class="text-gold-400 font-semibold text-sm flex items-center gap-2">
+              <i class="fa-solid fa-code-fork text-xs"></i> Non-Linear Architecture
+            </span>
+            <p class="text-xs text-gray-400">
+              Structuring dual timelines, psychological unreliable narrators, and complex interweaving character arcs without losing narrative drive.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-charcoal border border-gray-800 space-y-2">
+            <span class="text-gold-400 font-semibold text-sm flex items-center gap-2">
+              <i class="fa-solid fa-comments text-xs"></i> Vernacular & Subtext Mastery
+            </span>
+            <p class="text-xs text-gray-400">
+              Deep regional vernaculars of Southern Maharashtra, Sangli, Pune, and coastal Kokan dialogue translated with rhythm and subtext.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-charcoal border border-gray-800 space-y-2">
+            <span class="text-gold-400 font-semibold text-sm flex items-center gap-2">
+              <i class="fa-solid fa-person-burst text-xs"></i> Tactical Scene Geometry
+            </span>
+            <p class="text-xs text-gray-400">
+              Action scenes designed with clear spatial awareness, tactical logic, and emotional stakes rather than abstract descriptions.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-charcoal border border-gray-800 space-y-2">
+            <span class="text-gold-400 font-semibold text-sm flex items-center gap-2">
+              <i class="fa-solid fa-book-journal-whills text-xs"></i> Full Series Bibles
+            </span>
+            <p class="text-xs text-gray-400">
+              Comprehensive OTT bibles featuring multi-season progression, episode cliffhangers, visual tones, and budget category classifications.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DIRECT PITCH REQUEST & CONTACT ================= -->
+  <section id="contact" class="py-20 bg-charcoal/90 border-t border-gray-800 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <div class="text-gold-400 text-xs uppercase tracking-widest font-semibold flex items-center justify-center gap-2 mb-2">
+          <i class="fa-solid fa-handshake"></i> Direct Representation & Pitches
+        </div>
+        <h2 class="text-3xl font-serif font-bold text-white">Initiate Screenplay Request</h2>
+        <p class="text-gray-400 text-sm mt-2">
+          Producers, showrunners, directors, and commissioning editors can request complete screenplays, pitch bibles, or schedule a story conference.
+        </p>
+      </div>
+
+      <!-- Main Contact Card -->
+      <div class="bg-surface rounded-2xl border border-gray-800 p-6 sm:p-10 shadow-2xl">
+        
+        <form id="pitchRequestForm" onsubmit="handleInquirySubmit(event)" class="space-y-6">
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="producerName" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Full Name / Title *</label>
+              <input type="text" id="producerName" required placeholder="e.g. Vikramaditya (Director / Producer)" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all">
+            </div>
+            <div>
+              <label for="producerEmail" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Email Address *</label>
+              <input type="email" id="producerEmail" required placeholder="contact@studio.com" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="companyName" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Studio / Production House / Agency</label>
+              <input type="text" id="companyName" placeholder="e.g. Dharma, Excel, Jio Studios, or Independent" class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all">
+            </div>
+            <div>
+              <label for="inquiryType" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Inquiry Purpose *</label>
+              <select id="inquiryType" required class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all">
+                <option value="Complete Screenplay Request (Under NDA)">Request Full Screenplay (Draft Under NDA)</option>
+                <option value="Pitch Bible & Franchise Deck">Request Complete Pitch Bible & Deck</option>
+                <option value="Writers' Room Staffing">Writers' Room Staffing / Commission</option>
+                <option value="Script Doctoring & Dialogue Revision">Script Doctoring & Dialogue Revision</option>
+                <option value="Original Project Discussion">New Original Concept Commission</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="selectedScript" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Project Slate of Interest *</label>
+            <select id="selectedScript" required class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all">
+              <option value="संग्राम: द ब्लड लेगसी (Sangram)">संग्राम: द ब्लड लेगसी (Feature Crime Drama)</option>
+              <option value="The Pancha-Astra Chronicle">The Pancha-Astra Chronicle (Mythic Sci-Fi)</option>
+              <option value="शब्दांच्या कैदेत (Shabdanchya Kaidet)">शब्दांच्या कैदेत (OTT 5-Episode Series)</option>
+              <option value="Bhoot Yatra">Bhoot Yatra (Supernatural Sci-Fi Universe)</option>
+              <option value="The Ledger">The Ledger (Corporate Financial Thriller)</option>
+              <option value="Kinaara">Kinaara (Coastal Feature Drama)</option>
+              <option value="Custom Story Commission">Custom Story / Commission Assignment</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="projectMessage" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">Project Notes / Production Scope *</label>
+            <textarea id="projectMessage" rows="4" required placeholder="Specify your timeline, proposed platform (theatrical / streaming), or specific questions..." class="w-full px-4 py-3 rounded-xl bg-charcoal border border-gray-700/80 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-gold-400 focus:ring-1 focus:ring-gold-400 transition-all"></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+            <span class="text-xs text-gray-400 flex items-center gap-1.5">
+              <i class="fa-solid fa-lock text-gold-400"></i> Direct mail dispatch directly to Vivek Sunil Sabale.
+            </span>
+            <button type="submit" id="submitInquiryBtn" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-amber-500 hover:from-gold-400 hover:to-amber-400 text-obsidian font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:shadow-gold-500/25">
+              Transmit Pitch Request
+            </button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <!-- Quick Direct Contact Links -->
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
+        
+        <a href="mailto:viveksabale2005@gmail.com" class="p-4 rounded-xl bg-surface border border-gray-800 hover:border-gold-500/50 transition-colors group">
+          <div class="text-gold-400 text-lg mb-1"><i class="fa-solid fa-envelope"></i></div>
+          <div class="text-xs text-gray-400">Email Directly</div>
+          <div class="text-xs font-semibold text-white group-hover:text-gold-300">viveksabale2005@gmail.com</div>
+        </a>
+
+        <a href="tel:+918459755916" class="p-4 rounded-xl bg-surface border border-gray-800 hover:border-gold-500/50 transition-colors group">
+          <div class="text-gold-400 text-lg mb-1"><i class="fa-solid fa-phone"></i></div>
+          <div class="text-xs text-gray-400">Direct Line</div>
+          <div class="text-xs font-semibold text-white group-hover:text-gold-300">+91 8459755916</div>
+        </a>
+
+        <div class="p-4 rounded-xl bg-surface border border-gray-800">
+          <div class="text-gold-400 text-lg mb-1"><i class="fa-solid fa-id-badge"></i></div>
+          <div class="text-xs text-gray-400">SWA Registration</div>
+          <div class="text-xs font-mono font-bold text-white">#80415</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-void border-t border-gray-900 py-12 text-center text-xs text-gray-500">
+    <div class="max-w-7xl mx-auto px-4 space-y-5">
+      <div class="font-serif text-lg text-white font-bold tracking-wider">
+        VIVEK SUNIL SABALE
+      </div>
+      <p class="max-w-md mx-auto text-gray-400 text-xs">
+        Crafting cinematic narratives where raw human vulnerability meets calculated structural precision.
+      </p>
+      
+      <div class="flex justify-center gap-6 text-gray-400 text-base pt-1">
+        <a href="mailto:viveksabale2005@gmail.com" class="hover:text-gold-400 transition-colors" title="Direct Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="tel:+918459755916" class="hover:text-gold-400 transition-colors" title="Call Phone"><i class="fa-solid fa-phone"></i></a>
+        <a href="#slate" class="hover:text-gold-400 transition-colors" title="Screenplays"><i class="fa-solid fa-clapperboard"></i></a>
+        <a href="#reader" class="hover:text-gold-400 transition-colors" title="Script Reader"><i class="fa-solid fa-book-open"></i></a>
+      </div>
+
+      <div class="text-[11px] pt-6 border-t border-gray-900 text-gray-600 space-y-1">
+        <div>© 2026 Vivek Sunil Sabale. All Rights Reserved.</div>
+        <div>All original concepts, screenplays, and bibles are registered with the Screenwriters Association (SWA) India.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= PITCH BIBLE & LOGLINE MODAL ================= -->
+  <div id="pitchModal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+    <div class="bg-charcoal border border-gray-700 max-w-2xl w-full rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[90vh]">
+      
+      <!-- Modal Header -->
+      <div class="p-6 border-b border-gray-800 flex items-center justify-between bg-surface">
+        <div>
+          <span id="modalCategory" class="text-[10px] font-mono text-gold-400 uppercase tracking-widest font-bold">PROJECT SPECIFICATION</span>
+          <h3 id="modalTitle" class="text-2xl font-serif font-bold text-white mt-0.5">Project Title</h3>
+        </div>
+        <button onclick="closePitchModal()" class="w-8 h-8 rounded-full bg-charcoal text-gray-400 hover:text-white flex items-center justify-center border border-gray-700 transition-colors">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 space-y-6 overflow-y-auto text-sm">
+        
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-1.5">Official Logline</h4>
+          <p id="modalLogline" class="text-gray-200 italic bg-surface/80 p-4 rounded-xl border border-gray-800 font-editorial leading-relaxed text-base">
+            Logline text...
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div class="p-3 bg-surface rounded-xl border border-gray-800">
+            <span class="text-gray-400 block mb-0.5">Format & Pacing</span>
+            <span id="modalGenreFormat" class="font-medium text-white">Action-Noir • 118 Pages</span>
+          </div>
+          <div class="p-3 bg-surface rounded-xl border border-gray-800">
+            <span class="text-gray-400 block mb-0.5">Setting & Geography</span>
+            <span id="modalSetting" class="font-medium text-white">Sangli, Maharashtra</span>
+          </div>
+          <div class="p-3 bg-surface rounded-xl border border-gray-800">
+            <span class="text-gray-400 block mb-0.5">Tone & Market Comps</span>
+            <span id="modalTone" class="font-medium text-white">Sicario meets Gangs of Wasseypur</span>
+          </div>
+          <div class="p-3 bg-surface rounded-xl border border-gray-800">
+            <span class="text-gray-400 block mb-0.5">Legal Registration</span>
+            <span id="modalStatus" class="font-medium text-emerald-400 font-mono">SWA Member #80415</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Narrative Core & Thematic Drive</h4>
+          <p id="modalSynopsis" class="text-gray-300 leading-relaxed text-xs sm:text-sm">
+            Detailed synopsis...
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 border-t border-gray-800 bg-surface flex items-center justify-between">
+        <button onclick="requestThisScript()" class="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-obsidian font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2">
+          <i class="fa-solid fa-file-signature"></i> Request Treatment Deck
+        </button>
+        <button onclick="closePitchModal()" class="px-4 py-2 text-xs text-gray-400 hover:text-white">
+          Close
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Alert -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-28 opacity-0 transition-all duration-300 flex items-center gap-3 px-5 py-3 rounded-xl bg-surface border border-gold-500 text-white shadow-2xl text-xs sm:text-sm">
+    <i id="toastIcon" class="fa-solid fa-circle-check text-gold-400 text-base"></i>
+    <span id="toastMessage">Action completed!</span>
+  </div>
+
+  <!-- ================= SCRIPT & DATA LOGIC ================= -->
+  <script>
+    // Project Database Store
+    const projectDatabase = {
+      sangram: {
+        title: "संग्राम: द ब्लड लेगसी",
+        category: "Feature Film Screenplay",
+        genreFormat: "Action-Noir / Rural Crime Dynasty (118 Pages)",
+        setting: "Sangli & Kolhapur Sugar Belt, Maharashtra",
+        tone: "Visceral, Grounded, Tense (Comps: Sicario meets Gangs of Wasseypur)",
+        status: "SWA Registered #80415 • Draft 4 Complete",
+        logline: "When an estranged tactical contractor returns to his ancestral sugar estate in Sangli, he discovers his family's mills front a regional black-market arms conduit — forcing him to conduct a surgical war against his own ruthless brother.",
+        synopsis: "Sangram explores how economic geography shapes moral decay. Moving away from stylized hyperbole, the script focuses on the real-world mechanics of sugarcane-cooperative politics, extortion cartels, and riverbed gun running. The dialogue is grounded in authentic Southern Maharashtra vernacular with relentless pacing."
+      },
+      panchastra: {
+        title: "The Pancha-Astra Chronicle (पंचास्त्र)",
+        category: "Mythological Sci-Fi Franchise",
+        genreFormat: "High-Concept Cyber-Vedic Universe (Feature / Multi-Season)",
+        setting: "Neo-Deccan Metropolis & Ancient Sahyadri Faultlines",
+        tone: "Mythic, Hard-Sci-Fi, Epic Scope (Comps: Dune meets Brahmāstra with Nolan Realism)",
+        status: "SWA Registered #80415 • Franchise Bible + Pilot",
+        logline: "In an energy-depleted 2088 India, a disgraced quantum archeologist deciphers that the five ancient astras were actually self-replicating quantum containment engines — and must prevent an omnipotent defense conglomerate from igniting the Brahmashira.",
+        synopsis: "The Pancha-Astra bridges rigorous speculative quantum mechanics with Vedic literature. The project features deep worldbuilding, an expansive tech lore bible, detailed combat geometry, and multi-character arcs suitable for theatrical or premium streaming franchising."
+      },
+      shabdanchya: {
+        title: "शब्दांच्या कैदेत (Shabdanchya Kaidet)",
+        category: "OTT Web Series (5 Episodes)",
+        genreFormat: "Psychological Thriller / Chamber Procedural",
+        setting: "Mumbai High-Rises, Thane Police Archives & Khandala",
+        tone: "Unsettling, Cold, Subtext-Driven (Comps: Mindhunter meets Gone Girl)",
+        status: "SWA Registered #80415 • 5-Episode Bible & Pilot",
+        logline: "A reclusive bestselling Marathi crime author discovers that an unsolved string of murders matches the unpublished manuscript on his locked laptop word-for-word — dragging him into a psychological crossfire with a brilliant copycat who knows his deepest guilt.",
+        synopsis: "A high-tension 5-episode binge thriller examining memory distortion, literary voyeurism, and legal impunity. Written with sharp, biting Marathi dialogue, auditory motifs, and rapid cliffhanger hooks designed for streaming retention."
+      },
+      bhootyatra: {
+        title: "Bhoot Yatra (भूत यात्रा)",
+        category: "Cinematic Universe",
+        genreFormat: "Sci-Fi Horror-Comedy Franchise",
+        setting: "Subterranean Mumbai & Konkan Supernatural Coastline",
+        tone: "Spooky, Fast-Paced, Irreverent Satire (Comps: Men In Black meets Stree)",
+        status: "SWA Registered #80415 • Universe Bible & 3 Character Treatments",
+        logline: "Two bumbling municipal ward officers accidentally stumble upon the subterranean transit terminal where all departed souls of Western India must clear bureaucratic exit papers before ascending — only to lose the custody of an ancient demonic kingpin.",
+        synopsis: "Combines authentic Konkan folklore (Vetals, Jakinis, Hadals) with the chaotic absurdity of Indian municipal bureaucracy. Designed as a flexible cinematic universe capable of launching feature films, animated shorts, and comic spin-offs."
+      },
+      ledger: {
+        title: "The Ledger",
+        category: "Feature Film",
+        genreFormat: "Financial Thriller / Corporate Espionage (122 Pages)",
+        setting: "Bandra-Kurla Complex (BKC) & Nariman Point, Mumbai",
+        tone: "Analytical, High Stakes, Ticking Clock (Comps: Margin Call meets The Big Short)",
+        status: "SWA Registered #80415 • Feature Screenplay",
+        logline: "A quiet forensic auditor uncovers an algorithmic back-channel systematically bleeding India's largest infrastructure sovereign fund — but when her managing partner is murdered within 6 hours of her discovery, she must navigate a deadly corporate manhunt across South Mumbai.",
+        synopsis: "Fast, intelligent, and authentic to the nuances of modern Indian finance, shell company banking, and regulatory backdoors. The film is built around tense conversational chess matches and relentless logistical peril."
+      },
+      kinaara: {
+        title: "Kinaara (किनारा)",
+        category: "Feature Film Drama",
+        genreFormat: "Atmospheric Coastal Realism (98 Pages)",
+        setting: "Malvan, Ratnagiri & Coastal Kokan, Maharashtra",
+        tone: "Poetic, Restrained, Emotionally Cathartic (Comps: Manchester by the Sea meets Court)",
+        status: "SWA Registered #80415 • Festival Packaging",
+        logline: "When an ancestral fishing wharf is earmarked for an international deep-sea container port, an aging boat-builder and his two politically divided daughters must decide whether to sell their heritage or mount an impossible legal battle.",
+        synopsis: "A poignant meditation on progress, coastal climate realities, and generational succession in Maharashtra's Konkan region. Written in poetic Malvani Marathi with evocative maritime visual storytelling."
+      }
+    };
+
+    // Authentic Courier Screenplay Excerpts
+    const screenplayExcerpts = {
+      sangram: `
+<span class="script-slug text-gold-400 font-bold">EXT. SUGARCANE PLANTATION - SANGLI - DUSK</span>
+
+The wind cuts through eight-foot sugarcane stalks. A dry, metallic rattle.
+
+VIVEK (34) crouches behind a rusted diesel irrigation pump. Red volcanic soil caked over his tactical boots. His breathing is measured: four seconds in, four seconds out.
+
+Twenty yards out, two flashlights carve the dust. MAHESH (42) leads, a short-barrel 12-gauge cradled across his ribs.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">MAHESH</span>
+<span class="italic text-gray-400 text-xs block">(crisp Sangli dialect, low)</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+बापू म्हणालेत... आज रात्रीपर्यंत हिशोब चुकता झाला पाहिजे. त्याला पुन्हा मुंबईला जायचं नाहीये.
+</div>
+
+The second sentry strikes a beedi. The match FLICKERS.
+
+That flicker is all Vivek needs.
+
+In ONE FLUID MOTION, Vivek bursts through the thick stalks. SILENT.
+
+He strikes Mahesh's brachial nerve. The shotgun slips. Vivek catches the weapon's barrel mid-air before it touches the clay.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">VIVEK</span>
+<span class="italic text-gray-400 text-xs block">(whispering directly into his ear)</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+बापूंना सांग... हिशोब मी सुरू केलाय. संपवणार पण मीच.
+</div>
+
+Vivek racks the slide with one hand against his kneecap. CLICK-CLACK.
+
+The second sentry freezes. The lit match burns his fingertips.
+      `.trim(),
+
+      panchastra: `
+<span class="script-slug text-gold-400 font-bold">INT. SUB-CAVERN EXCAVATION SITE 09 - SAHYADRI RANGE - NIGHT</span>
+
+Massive hydraulic rigs hum at 400Hz. Neon coolant lines pulse across subterranean basalt rock.
+
+DR. SHAUNAK RAO (40s, titanium prosthetic forearm) shines his UV spectrometer onto a circular obsidian seal inscribed with early Brahmi equations.
+
+The seal does NOT reflect light. It ABSORBS it.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">SHAUNAK</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+These aren't verses. It's a localized spacetime decay sequence. They didn't bury a weapon. They buried an event horizon.
+</div>
+
+Across the scaffolding, COMMANDER TANYA (35) checks her plasma pulse carbine.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">TANYA</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+Doctor, the corporate extraction gunships just crossed the western ridge. If that seal contains what your translation claims...
+</div>
+
+The obsidian seal GROANS. Micro-fractures ignite with blinding gold luminescence.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">SHAUNAK</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+It's the Agneyastra. And the containment cycle just reached zero.
+</div>
+      `.trim(),
+
+      shabdanchya: `
+<span class="script-slug text-gold-400 font-bold">INT. PRADEEP'S STUDY - 24TH FLOOR - SOUTH MUMBAI - 01:15 AM</span>
+
+A minimalist, high-end apartment. Outside the floor-to-ceiling glass, Mumbai's rain sweeps the Arabian Sea in grey sheets.
+
+PRADEEP (45, heavy eyes, unshaven) stares at his laptop. 
+
+The cursor blinks in Microsoft Word.
+
+ON SCREEN: <span class="italic">"The third victim was found near the sewri mudflats at 02:10 AM, their watch stopped at exactly sixty-seven minutes."</span>
+
+Pradeep's smartphone VIBRATES on the mahogany desk. A private number.
+
+He answers. Doesn't say a word.
+
+<div class="text-center my-2">
+<span class="script-char text-gold-300 font-bold block">CALLER (FILTERED)</span>
+<span class="italic text-gray-400 text-xs block">(soft, calm Marathi)</span>
+</div>
+<div class="max-w-md mx-auto text-center script-dialogue">
+प्रदीप... पान क्रमांक अडोतीस वर एका ओळीची चूक झालीये. त्याचं घड्याळ सदुसष्ट मिनिटांवर नाही, अडुसष्ट मिनिटांवर थांबलं होतं.
+</div>
+
+Pradeep's blood runs cold. He never published page thirty-eight. The laptop was NEVER connected to Wi-Fi.
+      `.trim()
+    };
+
+    // State
+    let activeScript = 'sangram';
+    let isPaperMode = false;
+    let ambientDronePlaying = false;
+    let audioCtx = null;
+    let osc1 = null;
+    let osc2 = null;
+    let masterGain = null;
+
+    // Initialization
+    window.addEventListener('DOMContentLoaded', () => {
+      // Render initial script
+      renderScript(activeScript);
+
+      // Category filter tabs
+      const filterTabs = document.querySelectorAll('.filter-tab');
+      filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          filterTabs.forEach(t => {
+            t.classList.remove('bg-gold-500', 'text-obsidian', 'font-bold');
+            t.classList.add('text-gray-300');
+          });
+          tab.classList.add('bg-gold-500', 'text-obsidian', 'font-bold');
+          tab.classList.remove('text-gray-300');
+
+          const category = tab.getAttribute('data-category');
+          filterProjects(category);
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+
+      // Audio ambient button
+      document.getElementById('ambientSoundBtn').addEventListener('click', toggleAmbientDrone);
+    });
+
+    // Project Filter logic
+    function filterProjects(category) {
+      const items = document.querySelectorAll('.project-item');
+      items.forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Switch screenplay excerpt
+    function switchScript(key) {
+      activeScript = key;
+      document.querySelectorAll('.script-tab').forEach(b => {
+        b.classList.remove('bg-gold-500', 'text-obsidian', 'font-bold');
+        b.classList.add('bg-charcoal', 'text-gray-300');
+      });
+      const activeBtn = document.getElementById(`btn-${key}`);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-gold-500', 'text-obsidian', 'font-bold');
+        activeBtn.classList.remove('bg-charcoal', 'text-gray-300');
+      }
+      renderScript(key);
+    }
+
+    function renderScript(key) {
+      const container = document.getElementById('scriptCanvas');
+      container.innerHTML = screenplayExcerpts[key] || "Screenplay scene loading...";
+    }
+
+    // Toggle Paper Print Mode vs Obsidian Night Mode
+    function togglePaperMode() {
+      const container = document.getElementById('scriptCanvas');
+      const label = document.getElementById('paperBtnLabel');
+      isPaperMode = !isPaperMode;
+
+      if (isPaperMode) {
+        container.classList.add('screenplay-paper');
+        container.classList.remove('bg-[#0f1118]', 'text-[#c9d1d9]');
+        label.textContent = "Obsidian Mode";
+        showToast("Switched to Courier Print Paper Mode");
+      } else {
+        container.classList.remove('screenplay-paper');
+        container.classList.add('bg-[#0f1118]', 'text-[#c9d1d9]');
+        label.textContent = "Classic Paper Mode";
+        showToast("Switched to Obsidian Night Mode");
+      }
+    }
+
+    // Scroll to scene and load
+    function loadSampleScene(key) {
+      const reader = document.getElementById('reader');
+      reader.scrollIntoView({ behavior: 'smooth' });
+      switchScript(key);
+      showToast(`Loaded screenplay excerpt for: ${projectDatabase[key]?.title || 'project'}`);
+    }
+
+    // Copy script snippet text
+    function copyCurrentScriptSnippet() {
+      const rawText = document.getElementById('scriptCanvas').innerText;
+      copyToClipboard(rawText, "Screenplay scene copied to clipboard!");
+    }
+
+    // Modal Operations
+    function openPitchModal(key) {
+      const proj = projectDatabase[key];
+      if (!proj) return;
+
+      document.getElementById('modalTitle').textContent = proj.title;
+      document.getElementById('modalCategory').textContent = proj.category;
+      document.getElementById('modalLogline').textContent = `"${proj.logline}"`;
+      document.getElementById('modalGenreFormat').textContent = proj.genreFormat;
+      document.getElementById('modalSetting').textContent = proj.setting;
+      document.getElementById('modalTone').textContent = proj.tone;
+      document.getElementById('modalStatus').textContent = proj.status;
+      document.getElementById('modalSynopsis').textContent = proj.synopsis;
+
+      const modal = document.getElementById('pitchModal');
+      modal.classList.remove('hidden');
+      modal.dataset.currentKey = key;
+    }
+
+    function closePitchModal() {
+      document.getElementById('pitchModal').classList.add('hidden');
+    }
+
+    function requestThisScript() {
+      const key = document.getElementById('pitchModal').dataset.currentKey || 'sangram';
+      closePitchModal();
+      const contactSection = document.getElementById('contact');
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+
+      const scriptSelect = document.getElementById('selectedScript');
+      if (scriptSelect) {
+        for (let i = 0; i < scriptSelect.options.length; i++) {
+          if (scriptSelect.options[i].value.toLowerCase().includes(key)) {
+            scriptSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      showToast("Selected project! Please submit your production credentials.");
+    }
+
+    // Contact Form & Direct Transmission
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitInquiryBtn');
+      const originalText = btn.innerHTML;
+      btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Packaging Dispatch...`;
+      btn.disabled = true;
+
+      const name = document.getElementById('producerName').value.trim();
+      const email = document.getElementById('producerEmail').value.trim();
+      const company = document.getElementById('companyName').value.trim() || 'Independent';
+      const purpose = document.getElementById('inquiryType').value;
+      const project = document.getElementById('selectedScript').value;
+      const message = document.getElementById('projectMessage').value.trim();
+
+      // Formulate prefilled mailto link for direct transmission
+      const subject = encodeURIComponent(`Pitch Request: [${project}] - ${name} (${company})`);
+      const body = encodeURIComponent(
+        `Dear Vivek Sunil Sabale,\n\n` +
+        `Name: ${name}\n` +
+        `Company / Studio: ${company}\n` +
+        `Contact Email: ${email}\n` +
+        `Inquiry Purpose: ${purpose}\n` +
+        `Project of Interest: ${project}\n\n` +
+        `Production Scope / Note:\n${message}\n\n` +
+        `Best regards,\n${name}`
+      );
+      const mailtoUrl = `mailto:viveksabale2005@gmail.com?subject=${subject}&body=${body}`;
+
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        document.getElementById('pitchRequestForm').reset();
+        showToast("Inquiry recorded! Opening your email client to send...");
+        window.location.href = mailtoUrl;
+      }, 700);
+    }
+
+    // Copy to clipboard helper
+    function copyToClipboard(text, successMsg) {
+      const textarea = document.createElement("textarea");
+      textarea.value = text;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand("copy");
+        showToast(successMsg || "Copied to clipboard!");
+      } catch (err) {
+        console.error("Copy failed", err);
+        showToast("Could not copy automatically.");
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // Custom Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const msg = document.getElementById('toastMessage');
+      msg.textContent = message;
+      toast.classList.remove('translate-y-28', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+
+      setTimeout(() => {
+        toast.classList.add('translate-y-28', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 3500);
+    }
+
+    // Ambient Cinematic Drone Generator (Web Audio API - Pure synthesized sound)
+    function toggleAmbientDrone() {
+      const audioIcon = document.getElementById('audioIcon');
+      const statusText = document.getElementById('audioStatusText');
+
+      if (!ambientDronePlaying) {
+        try {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          if (!audioCtx) {
+            audioCtx = new AudioContextClass();
+          }
+          if (audioCtx.state === 'suspended') {
+            audioCtx.resume();
+          }
+
+          // Two detuned low oscillators creating cinematic tension (A1 - 55Hz & harmonics)
+          osc1 = audioCtx.createOscillator();
+          osc2 = audioCtx.createOscillator();
+          masterGain = audioCtx.createGain();
+
+          osc1.type = 'sine';
+          osc1.frequency.setValueAtTime(55, audioCtx.currentTime); // Deep root
+          osc2.type = 'triangle';
+          osc2.frequency.setValueAtTime(110.5, audioCtx.currentTime); // Sub octave harmonic detuned
+
+          masterGain.gain.setValueAtTime(0.001, audioCtx.currentTime);
+          masterGain.gain.exponentialRampToValueAtTime(0.035, audioCtx.currentTime + 2);
+
+          osc1.connect(masterGain);
+          osc2.connect(masterGain);
+          masterGain.connect(audioCtx.destination);
+
+          osc1.start();
+          osc2.start();
+
+          ambientDronePlaying = true;
+          audioIcon.classList.remove('fa-volume-xmark');
+          audioIcon.classList.add('fa-volume-high', 'text-gold-400');
+          statusText.textContent = "Soundtrack [Cinematic]";
+          showToast("Cinematic writing ambiance playing.");
+        } catch (err) {
+          console.warn("AudioContext error", err);
+          showToast("Audio unavailable in this browser context.");
+        }
+      } else {
+        if (masterGain && audioCtx) {
+          masterGain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1);
+          setTimeout(() => {
+            if (osc1) osc1.stop();
+            if (osc2) osc2.stop();
+          }, 1000);
+        }
+        ambientDronePlaying = false;
+        audioIcon.classList.remove('fa-volume-high', 'text-gold-400');
+        audioIcon.classList.add('fa-volume-xmark');
+        statusText.textContent = "Soundtrack [Off]";
+        showToast("Cinematic ambiance muted.");
+      }
+    }
+  </script>
+</body>
+</html>
